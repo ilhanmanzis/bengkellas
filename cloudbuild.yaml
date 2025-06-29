@@ -1,11 +1,23 @@
 steps:
-  # Step 1: Install PHP dependencies + artisan storage:link
-  - name: "ghcr.io/php-actions/composer:8.2"
+  # Step 1: Install PHP, Composer, ekstensi & Laravel deps
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
     entrypoint: "bash"
     args:
       - "-c"
       - |
-        composer install --no-dev --prefer-dist
+        apt-get update
+        apt-get install -y \
+          php \
+          php-mbstring \
+          php-xml \
+          php-zip \
+          php-sqlite3 \
+          unzip \
+          git \
+          curl
+
+        curl -sS https://getcomposer.org/installer | php
+        php composer.phar install --no-dev --prefer-dist --no-interaction
         php artisan storage:link
 
   # Step 2: Install Node dependencies
@@ -18,7 +30,7 @@ steps:
     entrypoint: "npm"
     args: ["run", "build"]
 
-  # Step 4: Inject APP_KEY
+  # Step 4: Inject APP_KEY ke app.yaml
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "bash"
     args:
@@ -26,7 +38,7 @@ steps:
       - |
         sed "s|__APP_KEY__|$_APP_KEY|" app.yaml.template > app.yaml
 
-  # Step 5: Deploy to App Engine
+  # Step 5: Deploy ke App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     args: ["app", "deploy", "app.yaml", "--quiet"]
 
