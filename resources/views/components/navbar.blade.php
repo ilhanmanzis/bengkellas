@@ -137,16 +137,15 @@
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <x-nav-link href="{{ route('home') }}" :page=$menu :mobile=true :active="request()->is('/')">Home
             </x-nav-link>
-            <x-nav-link href="{{ route('home') }}" :page=$menu :mobile=true :active="request()->is('')">Tentang Kami
+            <x-nav-link href="{{ route('tentang') }}" :page=$menu :mobile=true :active="request()->is('/tentangkami')">Tentang Kami
             </x-nav-link>
-            <x-nav-link href="{{ route('home') }}" :page=$menu :mobile=true :active="request()->is('')">Layanan
+            <x-nav-link href="{{ route('layanan') }}" :page=$menu :mobile=true :active="request()->is('/layanan')">Layanan
             </x-nav-link>
-            <x-nav-link href="{{ route('home') }}" :page=$menu :mobile=true :active="request()->is('')">Portofolio
+            <x-nav-link href="{{ route('portofolio') }}" :page=$menu :mobile=true :active="request()->is('/portofolio')">Portofolio
             </x-nav-link>
-            <x-nav-link href="{{ route('home') }}" :page=$menu :mobile=true :active="request()->is('')">Gallery
+            <x-nav-link href="{{ route('galeri') }}" :page=$menu :mobile=true :active="request()->is('/galeri')">Gallery
             </x-nav-link>
-            <x-nav-link href="{{ url('/') }}/kontak" :page=$menu :mobile=true :last=true
-                :active="request()->is('kontak')">Kontak
+            <x-nav-link href="{{ route('kontak') }}" :page=$menu :mobile=true :last=true :active="request()->is('/kontak')">Kontak
             </x-nav-link>
 
         </div>
