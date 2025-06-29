@@ -88,18 +88,18 @@
                         <x-nav-link href="{{ route('home') }}" :page=$menu :active="request()->is('/')">Home
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('home') }}" :page=$menu :active="request()->is('home')">Tentang Kami
+                        <x-nav-link href="{{ route('tentang') }}" :page=$menu :active="request()->is('tentangkami')">Tentang Kami
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('home') }}" :page=$menu :active="request()->is('home')">Layanan
+                        <x-nav-link href="{{ route('layanan') }}" :page=$menu :active="request()->is('layanan')">Layanan
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('home') }}" :page=$menu :active="request()->is('home')">Portofolio
+                        <x-nav-link href="{{ route('portofolio') }}" :page=$menu :active="request()->is('portofolio')">Portofolio
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('home') }}" :page=$menu :active="request()->is('home')">Gallery
+                        <x-nav-link href="{{ route('galeri') }}" :page=$menu :active="request()->is('galeri')">Galeri
                         </x-nav-link>
-                        <x-nav-link href="{{ url('/') }}/kontak" :page=$menu :active="request()->is('kontak')">Kontak
+                        <x-nav-link href="{{ route('kontak') }}" :page=$menu :active="request()->is('kontak')">Kontak
                         </x-nav-link>
 
                     </div>

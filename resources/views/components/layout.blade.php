@@ -33,6 +33,11 @@
     {{-- banner --}}
     @if ($page == 'Home')
         <x-banner-home></x-banner-home>
+    @else
+        <x-banner-no-home>
+            <x-slot:page>{{ $page }}</x-slot:page>
+            <x-slot:title>{{ $title }}</x-slot:title>
+        </x-banner-no-home>
     @endif
 
 
@@ -43,13 +48,13 @@
 
     <x-footer></x-footer>
 
-    <a href="" class="fixed bottom-0 left-0  p-4 z-50 ml-2 mb-2">
+    <a href="" class="fixed bottom-0 left-0  p-4 z-50 ml-2 mb-1">
         <img src="{{ asset('storage/wa.gif') }}" alt="icon wa" class="size-10">
     </a>
 
     <!-- Tombol Scroll to Top -->
     <button id="scrollTopBtn"
-        class="hidden fixed bottom-6 right-6 bg-yellow-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 z-50">
+        class="hidden fixed bottom-5 right-5 bg-yellow-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 z-50">
         ^
     </button>
 
