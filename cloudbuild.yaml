@@ -36,11 +36,7 @@ steps:
     args:
       - "-c"
       - |
-        sed "s|__APP_KEY__|$_APP_KEY|" app.yaml > app.yaml
-
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: "cat"
-    args: ["app.yaml"]
+        sed "s|__APP_KEY__|$_APP_KEY|" app.yaml.template > app.yaml
 
   # Step 5: Deploy ke App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
