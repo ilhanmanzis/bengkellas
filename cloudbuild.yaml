@@ -1,25 +1,11 @@
 steps:
-  - name: "php:8.2"
+  # Step 1: Install PHP dependencies + artisan storage:link
+  - name: "ghcr.io/php-actions/composer:8.2"
     entrypoint: "bash"
     args:
       - "-c"
       - |
-        apt-get update && apt-get install -y \
-          unzip \
-          zip \
-          git \
-          curl \
-          php8.2-mbstring \
-          php8.2-zip \
-          php8.2-sqlite3
-
-        # Install Composer
-        curl -sS https://getcomposer.org/installer | php
-
-        # Jalankan Composer
-        php composer.phar install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
-
-        # Generate symlink storage
+        composer install --no-dev --prefer-dist
         php artisan storage:link
 
   # Step 2: Install Node dependencies
@@ -32,7 +18,7 @@ steps:
     entrypoint: "npm"
     args: ["run", "build"]
 
-  # Step 4: Inject `APP_KEY` into app.yaml
+  # Step 4: Inject APP_KEY
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "bash"
     args:
