@@ -1,5 +1,4 @@
 steps:
-  # Step 1: Install PHP dependencies + storage:link
   - name: "php:8.2"
     entrypoint: "bash"
     args:
@@ -14,8 +13,13 @@ steps:
           php8.2-zip \
           php8.2-sqlite3
 
+        # Install Composer
         curl -sS https://getcomposer.org/installer | php
-        php composer.phar install --no-dev --prefer-dist
+
+        # Jalankan Composer
+        php composer.phar install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+        # Generate symlink storage
         php artisan storage:link
 
   # Step 2: Install Node dependencies
