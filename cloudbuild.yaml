@@ -38,3 +38,6 @@ steps:
 
 substitutions:
   _APP_KEY: ""
+
+options:
+  logging: CLOUD_LOGGING_ONLY
