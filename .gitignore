@@ -1,0 +1,40 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+/storage/pail
+/storage/logs
+/storage/framework
+# Allow storage/app/public to be committed
+/storage/*
+!/storage/app
+!/storage/app/public
+
+# Environment and config
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+.phpunit.cache
+.phpactor.json
+Homestead.yaml
+Homestead.json
+auth.json
+
+# IDE and system files
+/.idea
+/.vscode
+/.fleet
+/.zed
+/.nova
+.DS_Store
+Thumbs.db
+
+# Frontend build
+/public/hot
+/public/build
+
+# Optional: ignore Laravel Vapor & Forge stuff (if not used)
+/vapor.yml
+forge.env
