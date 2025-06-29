@@ -28,7 +28,7 @@
                             <path
                                 d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                         </svg>
-                        <a href="#" class="text-blue-950 font-semibold text-md pl-3">asd</a>
+                        <a href="#" class="text-blue-950 font-semibold text-md pl-3">ilhanmanzis1207@gmail.com</a>
                     </div>
                     <div class="flex justify-start items-center mt-5">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -38,8 +38,7 @@
                                 clip-rule="evenodd" />
                         </svg>
 
-                        <span
-                            class="text-blue-950 font-semibold text-md pl-3 text-justify">sadbjhasdjhasdjhdjhsadjhasdjhasgdjhasjhd</span>
+                        <span class="text-blue-950 font-semibold text-md pl-3 text-justify">Padang</span>
                     </div>
                     <div class="flex justify-start items-center mt-5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-12 text-blue-950 " viewBox="0 0 90 90"
@@ -64,8 +63,7 @@
                         </svg>
 
 
-                        <span
-                            class="text-blue-950 font-semibold text-md pl-3 text-justify">asdbjashdkjasdhkajsdhaskjdhkajsdhkj</span>
+                        <span class="text-blue-950 font-semibold text-md pl-3 text-justify">0888888886778</span>
                     </div>
 
                     <div class="flex justify-start items-center mt-5">
@@ -93,7 +91,7 @@
                             </g>
                         </svg>
                         <a href="https://api.whatsapp.com/send?phone="
-                            class="text-blue-950 font-semibold text-md pl-3 text-justify">haskjdhsakjdhsakjdhkajsdhkj</a>
+                            class="text-blue-950 font-semibold text-md pl-3 text-justify">0888888886778</a>
                     </div>
                 </div>
 
