@@ -40,6 +40,7 @@ steps:
 
   # Step 5: Deploy ke App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "gcloud"
     args: ["app", "deploy", "app.yaml", "--quiet"]
 
 substitutions:
