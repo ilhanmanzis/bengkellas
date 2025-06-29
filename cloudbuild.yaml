@@ -1,7 +1,14 @@
 steps:
-  # Step 1: Install PHP dependencies
-  - name: "gcr.io/cloud-builders/composer"
-    args: ["install", "--no-dev", "--prefer-dist"]
+  # Step 1: Install PHP dependencies + storage:link
+  - name: "php:8.2"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        apt-get update && apt-get install -y unzip git zip libzip-dev php-mbstring
+        curl -sS https://getcomposer.org/installer | php
+        php composer.phar install --no-dev --prefer-dist
+        php artisan storage:link
 
   # Step 2: Install Node dependencies
   - name: "node:18"
@@ -13,18 +20,7 @@ steps:
     entrypoint: "npm"
     args: ["run", "build"]
 
-  # Step 4: Run `php artisan storage:link`
-  - name: "php:8.2"
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-        apt-get update && apt-get install -y unzip git zip libzip-dev
-        curl -sS https://getcomposer.org/installer | php
-        php composer.phar install --no-dev --prefer-dist
-        php artisan storage:link
-
-  # Step 5: Inject `APP_KEY` into `app.yaml`
+  # Step 4: Inject `APP_KEY` into app.yaml
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "bash"
     args:
@@ -32,7 +28,7 @@ steps:
       - |
         sed "s|__APP_KEY__|$_APP_KEY|" app.yaml.template > app.yaml
 
-  # Step 6: Deploy to App Engine
+  # Step 5: Deploy to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     args: ["app", "deploy", "app.yaml", "--quiet"]
 
