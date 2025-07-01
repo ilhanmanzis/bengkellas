@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeri as ModelsGaleri;
 use Illuminate\Http\Request;
 
 class Galeri extends Controller
@@ -14,6 +15,7 @@ class Galeri extends Controller
         $data = [
             'page' => 'Galeri',
             'title' => 'Galeri',
+            'galeris' => ModelsGaleri::all()
         ];
 
         return view('public/galeri', $data);

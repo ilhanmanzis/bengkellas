@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sosmed;
 use Illuminate\Http\Request;
 
 class Kontak extends Controller
@@ -14,6 +15,7 @@ class Kontak extends Controller
         $data = [
             'page' => 'Kontak',
             'title' => 'Kontak',
+            'kontak' => Sosmed::first()
         ];
 
         return view('public/kontak', $data);

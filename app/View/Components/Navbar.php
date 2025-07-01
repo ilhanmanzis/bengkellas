@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Profile;
+use App\Models\Sosmed;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +23,10 @@ class Navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar');
+        $data = [
+            'profile' => Profile::first(),
+            'kontak'  => Sosmed::first()
+        ];
+        return view('components.navbar', $data);
     }
 }

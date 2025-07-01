@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portofolio as ModelsPortofolio;
 use Illuminate\Http\Request;
 
 class Portofolio extends Controller
@@ -14,6 +15,7 @@ class Portofolio extends Controller
         $data = [
             'page' => 'Portofolio',
             'title' => 'Portofolio',
+            'portofolios' => ModelsPortofolio::all()
         ];
 
         return view('public/portofolio', $data);
@@ -43,6 +45,7 @@ class Portofolio extends Controller
         $data = [
             'page' => 'Portofolio',
             'title' => 'Portofolio',
+            'portofolio' => ModelsPortofolio::find($id)
         ];
 
         return view('public/show_portofolio', $data);

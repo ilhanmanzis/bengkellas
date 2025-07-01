@@ -20,54 +20,37 @@
                 </div>
                 <div class="md:w-1/2 w-full pl-0 md:pl-10 ">
                     <span class="text-blue-950 text-3xl font-bold">Kontak</span>
+                    {{-- email --}}
+                    @if (!empty($kontak['kontak']))
+                        <div class="flex justify-start items-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="size-10 text-blue-950">
+                                <path
+                                    d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                                <path
+                                    d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                            </svg>
+                            <a href="mailto:{{ $kontak['email'] }}"
+                                class="text-blue-950 font-semibold text-md pl-3">{{ $kontak['email'] }}</a>
+                        </div>
+                    @endif
+
+                    {{-- alamat --}}
                     <div class="flex justify-start items-center mt-5">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="size-10 text-blue-950">
-                            <path
-                                d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                            <path
-                                d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                        </svg>
-                        <a href="#" class="text-blue-950 font-semibold text-md pl-3">ilhanmanzis1207@gmail.com</a>
-                    </div>
-                    <div class="flex justify-start items-center mt-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="md:size-12 size-20 text-blue-950">
+                            class="size-12 text-blue-950">
                             <path fill-rule="evenodd"
                                 d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
                                 clip-rule="evenodd" />
                         </svg>
 
-                        <span class="text-blue-950 font-semibold text-md pl-3 text-justify">Padang</span>
-                    </div>
-                    <div class="flex justify-start items-center mt-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-12 text-blue-950 " viewBox="0 0 90 90"
-                            fill="currentColor" id="fax">
-                            <path
-                                d="M60.189,64.87c0.063-0.006,0.125-0.006,0.184,0h6.432c2.563-0.048,2.563,3.822,0,3.78h-6.432
-                                    C57.883,68.739,57.705,65.021,60.189,64.87z M44.055,64.87c0.063-0.006,0.131-0.006,0.193,0h6.422c2.566-0.048,2.566,3.822,0,3.78
-                                    h-6.422C41.752,68.755,41.555,65.021,44.055,64.87z M60.373,56.313h6.432c2.563-0.043,2.563,3.828,0,3.781h-6.432
-                                    C57.811,60.14,57.811,56.27,60.373,56.313z M44.248,56.313h6.422c2.563-0.043,2.563,3.828,0,3.781h-6.422
-                                    C41.68,60.14,41.68,56.27,44.248,56.313z M60.373,47.761h6.432c2.563-0.048,2.563,3.822,0,3.776h-6.432
-                                    C57.811,51.583,57.811,47.712,60.373,47.761z M44.248,47.761h6.422c2.563-0.048,2.563,3.822,0,3.776h-6.422
-                                    C41.68,51.583,41.68,47.712,44.248,47.761z M47.951,12.75h22.885c0.047,0,0.115,0.015,0.115,0.198v28.808
-                                    c0,0.181-0.068,0.203-0.115,0.203H40.217c-0.053,0-0.121-0.021-0.121-0.203V19.9L47.951,12.75z M47.326,9.448
-                                    c-0.412,0-0.809,0.155-1.109,0.432l-8.881,8.073c-0.344,0.312-0.537,0.755-0.543,1.219v2.109l-0.02,0.005v47.917
-                                    c0,1.411-0.775,2.681-1.729,3.411c-0.949,0.724-2.068,1.032-3.189,1.032H17.123c-1.119,0-2.246-0.308-3.199-1.043
-                                    c-0.947-0.729-1.713-2-1.713-3.4V26.63c-2.266,0.645-3.99,2.677-3.99,5.131v42.942c0,2.984,2.553,5.359,5.537,5.359h62.432
-                                    c2.984,0,5.531-2.375,5.531-5.359V31.979c0-2.991-2.547-5.355-5.531-5.355h-1.938V12.948c0-1.87-1.51-3.5-3.416-3.5H47.326z">
-                            </path>
-                            <path
-                                d="M46.314 22.974c-1.057-.016-1.916.833-1.916 1.885 0 1.057.859 1.906 1.916 1.891h18.422c1.059.015 1.918-.833 1.918-1.891 0-1.052-.859-1.901-1.918-1.885H46.314zM46.314 30.724c-1.057-.017-1.916.833-1.916 1.891 0 1.051.859 1.901 1.916 1.891h8.422c1.053.01 1.918-.839 1.918-1.891 0-1.058-.865-1.907-1.918-1.891H46.314zM17.092 18.135c-1.063 0-1.756.588-1.756 1.287v49.781c0 .697.693 1.285 1.756 1.285h14.734c1.057 0 1.766-.588 1.766-1.285V19.422c0-.699-.709-1.287-1.766-1.287H17.092z">
-                            </path>
-                        </svg>
-
-
-                        <span class="text-blue-950 font-semibold text-md pl-3 text-justify">0888888886778</span>
+                        <span
+                            class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['alamat'] }}</span>
                     </div>
 
+                    {{-- Whatsapp --}}
                     <div class="flex justify-start items-center mt-5">
-                        <svg fill="currentColor" version="1.1" id="Layer_1" class="size-12 text-blue-950"
+                        <svg fill="currentColor" version="1.1" id="Layer_1" class="size-11 text-blue-950"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 308 308" xml:space="preserve">
                             <g id="XMLID_468_">
@@ -90,11 +73,65 @@
                                     C276.546,215.678,222.799,268.994,156.734,268.994z" />
                             </g>
                         </svg>
-                        <a href="https://api.whatsapp.com/send?phone="
-                            class="text-blue-950 font-semibold text-md pl-3 text-justify">0888888886778</a>
+                        <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
+                            class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['wa'] }}</a>
                     </div>
-                </div>
 
+                    {{-- facebook --}}
+                    @if (!empty($kontak['fb']) && !empty($kontak['url_fb']))
+                        <div class="flex justify-start items-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                viewBox="0 0 24 24" fill="currentColor" class="size-12 text-blue-950">
+                                <path
+                                    d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.014467 17.065322 19.313017 13.21875 19.898438 L 13.21875 14.384766 L 15.546875 14.384766 L 15.912109 12.019531 L 13.21875 12.019531 L 13.21875 10.726562 C 13.21875 9.7435625 13.538984 8.8710938 14.458984 8.8710938 L 15.935547 8.8710938 L 15.935547 6.8066406 C 15.675547 6.7716406 15.126844 6.6953125 14.089844 6.6953125 C 11.923844 6.6953125 10.654297 7.8393125 10.654297 10.445312 L 10.654297 12.019531 L 8.4277344 12.019531 L 8.4277344 14.384766 L 10.654297 14.384766 L 10.654297 19.878906 C 6.8702905 19.240845 4 15.970237 4 12 C 4 7.5698774 7.5698774 4 12 4 z">
+                                </path>
+                            </svg>
+
+                            <a href="{{ $kontak['url_fb'] }}"
+                                class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['fb'] }}</a>
+                        </div>
+                    @endif
+
+                    {{-- instagram --}}
+                    @if (!empty($kontak['ig']))
+                        <div class="flex justify-start items-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="size-12 text-blue-950">
+                                <path
+                                    d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z">
+                                </path>
+                            </svg>
+                            <a href="https://instagram.com/{{ $kontak['ig'] }}"
+                                class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['ig'] }}</a>
+                        </div>
+                    @endif
+
+                    {{-- tiktok --}}
+                    @if (!empty($kontak['tiktok']))
+                        <div class="flex justify-start items-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg"fill="currentColor" version="1.1" id="Layer_1"
+                                class="size-12 text-blue-950" viewBox="0 0 24 24">
+                                <path
+                                    d="M 6 3 C 4.3550302 3 3 4.3550302 3 6 L 3 18 C 3 19.64497 4.3550302 21 6 21 L 18 21 C 19.64497 21 21 19.64497 21 18 L 21 6 C 21 4.3550302 19.64497 3 18 3 L 6 3 z M 6 5 L 18 5 C 18.56503 5 19 5.4349698 19 6 L 19 18 C 19 18.56503 18.56503 19 18 19 L 6 19 C 5.4349698 19 5 18.56503 5 18 L 5 6 C 5 5.4349698 5.4349698 5 6 5 z M 12 7 L 12 14 C 12 14.56503 11.56503 15 11 15 C 10.43497 15 10 14.56503 10 14 C 10 13.43497 10.43497 13 11 13 L 11 11 C 9.3550302 11 8 12.35503 8 14 C 8 15.64497 9.3550302 17 11 17 C 12.64497 17 14 15.64497 14 14 L 14 10.232422 C 14.616148 10.671342 15.259118 11 16 11 L 16 9 C 15.952667 9 15.262674 8.7809373 14.78125 8.3613281 C 14.299826 7.941719 14 7.4149911 14 7 L 12 7 z">
+                                </path>
+                            </svg>
+                            <a href="https://tiktok/@{{ $kontak['tiktok'] }}"
+                                class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['tiktok'] }}</a>
+                        </div>
+                    @endif
+                    @if (!empty($kontak['linkedin']) && !empty($kontak['url_linkedin']))
+                        <div class="flex justify-start items-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" version="1.1" id="Layer_1"
+                                class="size-12 text-blue-950" viewBox="0 0 48 48">
+                                <path
+                                    d="M 11.5 6 C 8.4802259 6 6 8.4802259 6 11.5 L 6 36.5 C 6 39.519774 8.4802259 42 11.5 42 L 36.5 42 C 39.519774 42 42 39.519774 42 36.5 L 42 11.5 C 42 8.4802259 39.519774 6 36.5 6 L 11.5 6 z M 11.5 9 L 36.5 9 C 37.898226 9 39 10.101774 39 11.5 L 39 36.5 C 39 37.898226 37.898226 39 36.5 39 L 11.5 39 C 10.101774 39 9 37.898226 9 36.5 L 9 11.5 C 9 10.101774 10.101774 9 11.5 9 z M 15.5 13 A 2.5 2.5 0 0 0 15.5 18 A 2.5 2.5 0 0 0 15.5 13 z M 14 20 C 13.447 20 13 20.447 13 21 L 13 34 C 13 34.553 13.447 35 14 35 L 17 35 C 17.553 35 18 34.553 18 34 L 18 21 C 18 20.447 17.553 20 17 20 L 14 20 z M 21 20 C 20.447 20 20 20.447 20 21 L 20 34 C 20 34.553 20.447 35 21 35 L 24 35 C 24.553 35 25 34.553 25 34 L 25 26.5 C 25 25.121 26.121 24 27.5 24 C 28.879 24 30 25.121 30 26.5 L 30 34 C 30 34.553 30.447 35 31 35 L 34 35 C 34.553 35 35 34.553 35 34 L 35 26 C 35 22.691 32.309 20 29 20 C 27.462 20 26.063 20.586016 25 21.541016 L 25 21 C 25 20.447 24.553 20 24 20 L 21 20 z">
+                                </path>
+                            </svg>
+                            <a href="{{ $kontak['url_linkedin'] }}"
+                                class="text-blue-950 font-semibold text-md pl-3 text-justify">{{ $kontak['linkedin'] }}</a>
+                        </div>
+                </div>
+                @endif
 
             </div>
 

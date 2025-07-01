@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Banner;
+use App\Models\Profile;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +23,10 @@ class BannerHome extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.banner-home');
+        $data = [
+            'profile' => Profile::first(),
+            'banners'    => Banner::all()
+        ];
+        return view('components.banner-home', $data);
     }
 }

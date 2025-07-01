@@ -1,6 +1,6 @@
 <div id="top-header" class="w-full hidden md:flex justify-between border-b border-gray-300 py-3 px-32">
     <div class="w-1/2 flex justify-start">
-        <div class="flex">
+        <a href="{{ route('home') }}" class="flex hover:border-gray-300 hover:border">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-5 text-blue-950">
@@ -10,11 +10,12 @@
 
             </div>
             <div id="text-logo" class="text-blue-950  rounded-md pt-0.5 px-1 text-xs " aria-current="page">
-                <span style="text-transform: uppercase">Bengkel Las Manser</span>
+                <span style="text-transform: uppercase">{{ $profile['name'] }}</span>
                 <p class="text-sm font-normal"></p>
             </div>
-        </div>
-        <a href="#" class="flex mx-5 hover:border-gray-300 hover:border">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
+            class="flex mx-5 hover:border-gray-300 hover:border">
             <div class="">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-4 text-blue-950">
@@ -24,41 +25,46 @@
 
             </div>
             <div id="text-logo" class="text-blue-950  rounded-md  px-1 text-xs " aria-current="page">
-                <span style="text-transform: uppercase">086767567567</span>
+                <span style="text-transform: uppercase">{{ $kontak['wa'] }}</span>
                 <p class="text-sm font-normal"></p>
             </div>
         </a>
     </div>
     <div class="w-1/2 flex justify-end">
-        <a href="#" class="flex hover:border-gray-300 hover:border">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-4" viewBox="0 0 24 24">
-                    <path
-                        d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z">
-                    </path>
-                </svg>
+        @if (!empty($kontak['url_fb']) && !empty($kontak['fb']))
+            <a href="{{ $kontak['url_fb'] }}" class="flex hover:border-gray-300 hover:border">
+                <div>
 
-            </div>
-            <div id="text-logo" class="text-blue-950  rounded-md px-1 text-xs " aria-current="page">
-                <span style="text-transform: uppercase">Bengkel Las Manser</span>
-                <p class="text-sm font-normal"></p>
-            </div>
-        </a>
-        <a href="#" class="flex mx-5 hover:border-gray-300 hover:border">
-            <div class="">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-4" viewBox="0 0 50 50"
-                    stroke-width="1.5" stroke="currentColor" class="size-4 text-blue-950">
-                    <path
-                        d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z">
-                    </path>
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-4" viewBox="0 0 50 50"
+                        stroke-width="1.5" stroke="currentColor" class="size-4 text-blue-950">
+                        <path
+                            d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z">
+                        </path>
+                    </svg>
+                </div>
+                <div id="text-logo" class="text-blue-950  rounded-md px-1 text-xs " aria-current="page">
+                    <span style="text-transform: uppercase">{{ $kontak['fb'] }}</span>
+                    <p class="text-sm font-normal"></p>
+                </div>
+            </a>
+        @endif
+        @if (!empty($kontak['ig']))
+            <a href="https://instagram.com/{{ $kontak['ig'] }}" class="flex mx-5 hover:border-gray-300 hover:border">
+                <div class="">
 
-            </div>
-            <div id="text-logo" class="text-blue-950  rounded-md  px-1 text-xs " aria-current="page">
-                <span style="text-transform: uppercase">Bengkel Las Manser</span>
-                <p class="text-sm font-normal"></p>
-            </div>
-        </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-4" viewBox="0 0 24 24">
+                        <path
+                            d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z">
+                        </path>
+                    </svg>
+
+                </div>
+                <div id="text-logo" class="text-blue-950  rounded-md  px-1 text-xs " aria-current="page">
+                    <span style="text-transform: uppercase">{{ $kontak['ig'] }}</span>
+                    <p class="text-sm font-normal"></p>
+                </div>
+            </a>
+        @endif
     </div>
 </div>
 
@@ -66,11 +72,11 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between">
             <div class="flex items-center">
-                <a href="{{ url('/') }}/" class="shrink-0 flex items-center justify-between">
+                <a href="{{ route('home') }}/" class="shrink-0 flex items-center justify-between">
                     <img class="size-20 pr-3 w-20" src="{{ asset('storage/logo/logo.png') }}" alt="Your Company">
                     <div id="text-logo"
                         class="text-gray-950  rounded-md px-3 py-2 text-sm lg:text-3xl font-bold md:hidden"
-                        aria-current="page"><span style="text-transform: uppercase">Bengkel Las Manser</span>
+                        aria-current="page"><span style="text-transform: uppercase">{{ $profile['name'] }}</span>
                         <p class="text-sm font-normal"></p>
                     </div>
                 </a>

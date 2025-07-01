@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Layanan;
+use App\Models\Portofolio;
+use App\Models\Profile;
+use App\Models\Sosmed;
 use Illuminate\Http\Request;
 
 class Home extends Controller
@@ -11,9 +16,15 @@ class Home extends Controller
      */
     public function index()
     {
+        $profile = Profile::first();
         $data = [
             'page' => 'Home',
-            'title' => 'Bengkel Las Manser',
+            'title' => $profile->name,
+            'profile' => $profile,
+            'layanans' => Layanan::limit(3)->get(),
+            'portofolios' => Portofolio::limit(3)->get(),
+            'banners' => Banner::all(),
+            'kontak' => Sosmed::first()
         ];
 
         return view('public/home', $data);

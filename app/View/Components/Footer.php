@@ -2,6 +2,9 @@
 
 namespace App\View\Components;
 
+use App\Models\Portofolio;
+use App\Models\Profile;
+use App\Models\Sosmed;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +24,11 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer');
+        $data = [
+            'profile' => Profile::first(),
+            'kontak' => Sosmed::first(),
+            'portofolios' => Portofolio::limit(2)->get()
+        ];
+        return view('components.footer', $data);
     }
 }

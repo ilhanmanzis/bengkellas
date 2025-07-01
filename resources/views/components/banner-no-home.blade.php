@@ -1,8 +1,8 @@
-<div class="w-full bg-blue-950 flex justify-start flex-wrap " data-aos="fade-up" data-aos-duration="1000">
-    <div class="w-full md:w-1/2 aspect-[16/6] md:aspect-[16/4] flex justify-center items-center relative">
+<div class="w-full bg-blue-950 flex justify-start flex-wrap md:mt-0 mt-20" data-aos="fade-up" data-aos-duration="1000">
+    <div class="w-full md:w-1/2 aspect-[16/6] md:aspect-[16/4] md:flex justify-center items-center relative hidden">
         <div class="">
-            <p class="text-yellow-500 text-3xl font-normal">Bengkel Las Manser</p>
-            <p class="text-gray-200 text-sm">Jasa Las Custom dan Fabrikasi Besi atau Stainless Steel</p>
+            <p class="text-yellow-500 text-3xl font-normal uppercase">{{ $profile['name'] }}</p>
+            <p class="text-gray-200 text-sm">{{ $profile['motto1'] }}</p>
         </div>
 
     </div>
@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="bg-white py-5 px-5 md:px-20 flex justify-between drop-shadow-md" data-aos="fade-up"
+<div class="bg-white py-5 px-5 md:px-20 flex justify-between drop-shadow-md" data-aos="fade-up" id="main-search"
     data-aos-duration="1000">
     <div class="flex justify-start">
         <a href="{{ url('/') }}/" class="flex justify-start">
@@ -27,7 +27,8 @@
         <span class="text-gray-500 px-2">{{ $title }}</span>
     </div>
     <div class="div">
-        <a href="#" class="mt-5 px-5 py-2 bg-blue-900 rounded-2xl text-white text-sm hover:bg-yellow-500">Hubungi
+        <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
+            class="mt-5 px-5 py-2 bg-blue-900 rounded-2xl text-white text-sm hover:bg-yellow-500">Hubungi
             Kami</a>
     </div>
 </div>

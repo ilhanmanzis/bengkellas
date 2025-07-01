@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    {{-- <link rel="icon" type="image/png" href="{{ asset('storage/' . $icon_website['logo']) }}"> --}}
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $profile['logo']) }}">
     <title>{{ $title }}</title>
     <style>
         #top-header {
@@ -18,6 +18,24 @@
 
         #top-header.hide {
             transform: translateY(-100%);
+        }
+
+        figure a img {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            max-width: 300px;
+        }
+
+        @media (min-width: 640px) {
+            figure a img {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                max-width: 400px;
+            }
+        }
+
+        figure a figcaption {
+            display: none;
         }
     </style>
 
@@ -48,7 +66,8 @@
 
     <x-footer></x-footer>
 
-    <a href="" class="fixed bottom-0 left-0  p-4 z-50 ml-2 mb-1">
+    <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}" targer="_blank"
+        class="fixed bottom-0 left-0  p-4 z-50 ml-2 mb-1">
         <img src="{{ asset('storage/wa.gif') }}" alt="icon wa" class="size-10">
     </a>
 

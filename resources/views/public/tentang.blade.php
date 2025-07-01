@@ -7,19 +7,8 @@
         </div>
         <div class="w-full md:w-1/2">
             <p class="text-yellow-500 md:text-2xl text-sm font-bold" data-aos="fade-down">Tentang Kami</p>
-            <p class="text-blue-950 md:text-3xl mb-5 text-md font-bold" data-aos="fade-down">Bengkel Las Manser</p>
-            <p class="text-gray-700 text-justify" data-aos="fade-right">Bengkel Las Manser adalah
-                penyedia jasa pengerjaan logam berkualitas yang berlokasi di Padang. Kami spesialis dalam pengerjaan
-                stainless steel dan besi untuk berbagai kebutuhan, mulai dari pembuatan kanopi, railing, tangga, hingga
-                pintu pagar otomatis dan manual. Berdiri dengan tujuan memberikan solusi konstruksi yang kokoh, tahan
-                lama, dan estetik, kami selalu mengutamakan kualitas setiap proyek. Dengan pengalaman yang kami miliki,
-                tim ahli kami siap memberikan hasil pengerjaan yang sesuai dengan keinginan anda.
-
-                Kami menggunakan material stainless steel dan besi terbaik memiliki daya tahan yang luar biasa terhadap
-                cuaca dan korosi. Selain itu, kami juga menawarkan desain yang bisa disesuaikan dengan keinginan
-                pelanggan, baik itu untuk kebutuhan pribadi, komersial, atau proyek konstruksi besar. Dengan cakupan
-                layanan yang luas, kami melayani proyek di seluruh Indonesia, memberikan kemudahan bagi pelanggan yang
-                membutuhkan layanan pengerjaan logam profesional.</p>
+            <p class="text-blue-950 md:text-3xl mb-5 text-md font-bold" data-aos="fade-down">{{ $profile['name'] }}</p>
+            <div class="text-gray-700 text-justify" data-aos="fade-right">{!! $profile['tentang_kami'] !!}</div>
         </div>
     </div>
 </x-layout>

@@ -11,28 +11,12 @@
 
     <div class="w-full">
         <div class=" lg:mx-20 md:mx-15 mx-10 mt-5 flex justify-between flex-wrap pt-10 py-5">
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-            <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-            </div>
-
+            @foreach ($galeris as $galeri)
+                <div class="shadow-lg w-90  bg-white px-5 py-5 mb-5" data-aos="fade-down">
+                    <img src="{{ asset('storage/' . $galeri['foto']) }}" alt=""
+                        class="relative w-full aspect-[4/3] mb-2">
+                </div>
+            @endforeach
         </div>
 
 

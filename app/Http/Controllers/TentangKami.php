@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class TentangKami extends Controller
@@ -14,6 +15,7 @@ class TentangKami extends Controller
         $data = [
             'page' => 'Tentang Kami',
             'title' => 'Tentang Kami',
+            'profile' => Profile::first()
         ];
 
         return view('public/tentang', $data);

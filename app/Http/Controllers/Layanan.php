@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Layanan as ModelsLayanan;
+use App\Models\Sosmed;
 use Illuminate\Http\Request;
 
 class Layanan extends Controller
@@ -14,6 +16,8 @@ class Layanan extends Controller
         $data = [
             'page' => 'Layanan',
             'title' => 'Layanan',
+            'layanans' => ModelsLayanan::all(),
+            'kontak'    => Sosmed::first()
         ];
 
         return view('public/layanan', $data);
