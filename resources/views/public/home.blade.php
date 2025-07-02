@@ -2,8 +2,8 @@
     <x-slot:page>{{ $page }}</x-slot:page>
     <x-slot:title>{{ $title }}</x-slot:title>
     {{-- motto --}}
-    <div class="w-full py-20 px-10 md:px-50 flex justify-start gap-10 text-justify" data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom">
+    <div class="w-full py-10 md:py-20 px-10 md:px-50 flex justify-start gap-10 text-left md:text-justify"
+        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
         <div class="w-full md:w-2/3">
             <span class="px-3 py-2 bg-yellow-500 rounded-xl text-white text-sm md:text-md">{{ $profile['name'] }}</span>
             <p class="text-yellow-500 text-xl md:text-3xl my-5">+{{ $kontak['wa'] }}</p>
@@ -185,7 +185,7 @@
             </div>
             <div class="w-full mt-4">
                 <p class="text-white text-md font-bold">Material Berkualitas</p>
-                <p class="text-white text-sm text-justify mt-1">Menggunakan bahan terbaik untuk memastikan ketahanan.
+                <p class="text-white text-sm  mt-1">Menggunakan bahan terbaik untuk memastikan ketahanan.
                 </p>
 
             </div>
@@ -203,7 +203,7 @@
             </div>
             <div class="w-full mt-4">
                 <p class="text-white text-md font-bold">Profesional dan Berpengalaman</p>
-                <p class="text-white text-sm text-justify mt-1">Memiliki tim berpengalaman dibidang pengelasan lebih
+                <p class="text-white text-sm  mt-1">Memiliki tim berpengalaman dibidang pengelasan lebih
                     dari 10 Tahun.
                 </p>
 
@@ -222,7 +222,7 @@
             </div>
             <div class="w-full mt-4">
                 <p class="text-white text-md font-bold">Harga Kompetitif</p>
-                <p class="text-white text-sm text-justify mt-1">Memberikan solusi terbaik tanpa membebani anggaran
+                <p class="text-white text-sm  mt-1">Memberikan solusi terbaik tanpa membebani anggaran
                     Anda.
                 </p>
 
@@ -241,7 +241,7 @@
             </div>
             <div class="w-full mt-4">
                 <p class="text-white text-md font-bold">Gratis Konsultasi</p>
-                <p class="text-white text-sm text-justify mt-1">Konsultasikan dan rencanakan kebutuhan anda dengan tim
+                <p class="text-white text-sm  mt-1">Konsultasikan dan rencanakan kebutuhan anda dengan tim
                     kami.
                 </p>
 
