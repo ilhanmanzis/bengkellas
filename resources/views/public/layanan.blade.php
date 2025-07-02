@@ -20,7 +20,7 @@
                     class="text-blue-800 text-xl font-semibold">{{ $layanan['name'] }}</span>
                 <div class="border-t border-gray-300 mt-3 pt-5">
                     <p class="text-sm text-gray-600">
-                        {{ Str::limit($layanan['isi'], 90, '...') }}
+                        {{ Str::limit($layanan['isi'], 80, '...') }}
                     </p>
                     <div x-data="{ show: false }" class="w-full border-gray-400 my-5 border py-1 px-3 rounded-md">
                         <!-- Tombol Toggle -->

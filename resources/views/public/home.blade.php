@@ -73,7 +73,7 @@
                 <span class="text-blue-800 text-xl font-semibold">{{ $layanan['name'] }}</span>
                 <div class="border-t border-gray-300 mt-3 pt-5">
                     <p class="text-sm text-gray-600">
-                        {{ Str::limit(strip_tags($layanan['isi']), 90, '...') }}
+                        {{ Str::limit(strip_tags($layanan['isi']), 80, '...') }}
                     </p>
                     <div x-data="{ show: false }" class="w-full border-gray-400 my-5 border py-1 px-3 rounded-md">
                         <!-- Tombol Toggle -->
@@ -281,22 +281,23 @@
         </div>
         <div class="border-t border-gray-300 lg:mx-20 md:mx-15 mx-10 mt-5 flex justify-between flex-wrap pt-10 py-5">
             @foreach ($portofolios as $index => $portofolio)
-            @endforeach
-            <div class="shadow-lg w-90  bg-white px-5 pt-5 mb-5" data-aos="fade-down">
-                <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
-                <span class="text-yellow-500 text-xl font-semibold">{{ $index + 1 }}. </span> <span
-                    class="text-blue-800 text-xl font-semibold">{{ $portofolio['name'] }}</span>
-                <div class="border-t border-gray-300 mt-3 pt-5">
-                    <p class="text-sm text-gray-600">
-                        {{ Str::limit(strip_tags($portofolio['isi']), 90, '...') }}
-                    </p>
+                <div class="shadow-lg w-90  bg-white px-5 pt-5 mb-5" data-aos="fade-down">
+                    <img src="{{ asset('storage/' . $portofolio['foto']) }}" alt=""
+                        class="relative w-full aspect-[4/3] mb-2">
+                    <span class="text-yellow-500 text-xl font-semibold">{{ $index + 1 }}. </span> <span
+                        class="text-blue-800 text-xl font-semibold">{{ $portofolio['name'] }}</span>
+                    <div class="border-t border-gray-300 mt-3 pt-5">
+                        <p class="text-sm text-gray-600">
+                            {{ Str::limit(strip_tags($portofolio['isi']), 90, '...') }}
+                        </p>
 
+                    </div>
+                    <div class="my-5 ">
+                        <a href="{{ route('show_portofolio', ['id' => $portofolio['id_portofolio']]) }}"
+                            class="mx-auto mb-15 px-5 py-2 bg-yellow-500 hover:bg-blue-900 rounded-2xl text-white text-sm">Selengkapnya</a>
+                    </div>
                 </div>
-                <div class="my-5 ">
-                    <a href="{{ route('show_portofolio', ['id' => $portofolio['id_portofolio']]) }}"
-                        class="mx-auto mb-15 px-5 py-2 bg-yellow-500 hover:bg-blue-900 rounded-2xl text-white text-sm">Selengkapnya</a>
-                </div>
-            </div>
+            @endforeach
 
         </div>
 

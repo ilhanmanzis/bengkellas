@@ -13,7 +13,8 @@
         <div class=" lg:mx-20 md:mx-15 mx-10 mt-5 flex justify-between flex-wrap pt-10 py-5">
             @foreach ($portofolios as $index => $portofolio)
                 <div class="shadow-lg w-90  bg-white px-5 pt-5 mb-5" data-aos="fade-down">
-                    <img src="{{ asset('storage/1.jpeg') }}" alt="" class="relative w-full aspect-[4/3] mb-2">
+                    <img src="{{ asset('storage/' . $portofolio['foto']) }}" alt=""
+                        class="relative w-full aspect-[4/3] mb-2">
                     <span class="text-yellow-500 text-xl font-semibold">{{ $index + 1 }}. </span> <span
                         class="text-blue-800 text-xl font-semibold">{{ $portofolio['name'] }}</span>
                     <div class="border-t border-gray-300 mt-3 pt-5">
