@@ -60,7 +60,7 @@ class KontakResource extends Resource
                 Forms\Components\TextInput::make('url_yt')
                     ->label('Link Chanel Youtube')
                     ->maxLength(255),
-                Forms\Components\TextArea::make('alamat')
+                Forms\Components\Textarea::make('alamat')
                     ->label('Alamat Lengkap')
                     ->required()
                     ->maxLength(255),

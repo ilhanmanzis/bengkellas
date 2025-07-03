@@ -39,7 +39,7 @@ class LayananResource extends Resource
                     ->preserveFilenames(false)
                     ->visibility('public')
                     ->required(),
-                Forms\Components\TextArea::make('isi')
+                Forms\Components\Textarea::make('isi')
                     ->required()
                     ->label('Isi')
                     ->rows(5)
