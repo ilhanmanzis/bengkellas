@@ -53,7 +53,7 @@
                     </div>
                     <div class="flex justify-start">
 
-                        <a href="{{ $kontak['wa'] }}"
+                        <a href="https://api.whatsapp.com/send?phone={{ $kontak['wa'] }}"
                             class="w-1/2 rounded-t-2xl bg-blue-950 hover:bg-yellow-500 text-white pl-3 py-3 text-sm flex justify-start">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="size-5 text-white mr-3"
                                 viewBox="0 0 50 50" fill="currentColor">
