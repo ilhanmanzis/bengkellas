@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Galeri as ModelsGaleri;
+use App\Models\Profile;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class Galeri extends Controller
 {
@@ -12,6 +16,21 @@ class Galeri extends Controller
      */
     public function index()
     {
+        $profile = Profile::first();
+        // SEO Meta
+        SEOMeta::setTitle('Galeri Kami | ' . $profile->name);
+        SEOMeta::setDescription($profile->motto1 . ', ' . $profile->sekilas_info1);
+
+        // Open Graph
+        OpenGraph::setTitle('Galeri Kami | ' . $profile->name);
+        OpenGraph::setDescription($profile->motto1 . ', ' . $profile->sekilas_info1);
+        OpenGraph::setUrl(url('/galeri'));
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addImage(asset('storage/' . ($profile->logo)));
+
+        // Twitter Card
+        TwitterCard::setTitle('Galeri Kami | ' . $profile->name);
+        TwitterCard::setSite('@yourtwitterhandle');
         $data = [
             'page' => 'Galeri',
             'title' => 'Galeri',

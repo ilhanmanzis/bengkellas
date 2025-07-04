@@ -8,6 +8,9 @@ use App\Models\Portofolio;
 use App\Models\Profile;
 use App\Models\Sosmed;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class Home extends Controller
 {
@@ -17,6 +20,21 @@ class Home extends Controller
     public function index()
     {
         $profile = Profile::first();
+        // SEO Meta
+        SEOMeta::setTitle($profile->name);
+        SEOMeta::setDescription($profile->motto1 . ', ' . $profile->sekilas_info1);
+        SEOMeta::addKeyword(['layanan', 'portofolio', 'jasa', 'bengkel las', 'produk']);
+
+        // Open Graph
+        OpenGraph::setTitle($profile->name);
+        OpenGraph::setDescription($profile->motto1 . ', ' . $profile->sekilas_info1);
+        OpenGraph::setUrl(url('/'));
+        OpenGraph::addProperty('type', 'website');
+        OpenGraph::addImage(asset('storage/' . ($profile->logo)));
+
+        // Twitter Card
+        TwitterCard::setTitle($profile->name);
+        TwitterCard::setSite('@yourtwitterhandle');
         $data = [
             'page' => 'Home',
             'title' => $profile->name,

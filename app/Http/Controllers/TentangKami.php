@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class TentangKami extends Controller
 {
@@ -12,10 +15,23 @@ class TentangKami extends Controller
      */
     public function index()
     {
+        $profile = Profile::first();
+        SEOMeta::setTitle('Tentang Kami | ' . $profile->name);
+        SEOMeta::setDescription(strip_tags($profile->tentang_kami));
+
+        // Open Graph
+        OpenGraph::setTitle('Tentang Kami | ' . $profile->name);
+        OpenGraph::setDescription(strip_tags($profile->tentang_kami));
+        OpenGraph::setUrl(url('/tentangkami'));
+        OpenGraph::addProperty('type', 'website');
+
+        // Twitter Card
+        TwitterCard::setTitle('Tentang Kami | ' . $profile->name);
+        //        TwitterCard::setSite('@yourtwitterhandle'); // opsional
         $data = [
             'page' => 'Tentang Kami',
             'title' => 'Tentang Kami',
-            'profile' => Profile::first()
+            'profile' => $profile
         ];
 
         return view('public/tentang', $data);
